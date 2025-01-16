@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { createSchema, createYoga } from "graphql-yoga";
 import { GraphQLTemporalDate } from "./scalarResolvers/date.js";
 import { Temporal } from "temporal-polyfill";
+import { useGraphQlJit } from "@envelop/graphql-jit";
 
 export const schema = createSchema({
   typeDefs: `
@@ -40,7 +41,7 @@ export const schema = createSchema({
   },
 });
 
-const yoga = createYoga({ schema, graphiql: true });
+const yoga = createYoga({ schema, graphiql: true, plugins: [useGraphQlJit()] });
 const server = createServer(yoga);
 
 server.listen(4000, () => {
