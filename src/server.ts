@@ -41,7 +41,13 @@ export const schema = createSchema({
   },
 });
 
-const yoga = createYoga({ schema, graphiql: true, plugins: [useGraphQlJit()] });
+const yoga = createYoga({
+  schema,
+  graphiql: true,
+  plugins: [
+    useGraphQlJit(), // comment out this line to see the resolver working properly
+  ],
+});
 const server = createServer(yoga);
 
 server.listen(4000, () => {
