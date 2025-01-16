@@ -1,0 +1,12 @@
+{
+  "name": "graphql-jit-issue",
+  "packageManager": "yarn@4.6.0",
+  "type": "module",
+  "dependencies": {
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "prettier": "^3.4.2"
+  }
+}
