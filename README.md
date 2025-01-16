@@ -55,3 +55,23 @@ the `useGraphQlJit()` plugin to see the resolver working properly.
   }
 }
 ```
+
+## Passing as a Variable
+
+If you pass the date as a variable, it works even with `jit` enabled.
+
+```graphql
+mutation testMutation($input: TestMutationInput!) {
+  testMutation(input: $input) {
+    date
+  }
+}
+```
+
+```json
+{
+  "input": {
+    "date": "2018-01-01"
+  }
+}
+```
